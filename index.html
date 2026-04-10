@@ -250,55 +250,84 @@
                 </div>
             </section>
 
-            <section class="slide-item">
-   <!-- Slide 3：跨界内容创作者（重构版） -->
-<div class="slide-item relative w-full h-screen overflow-hidden bg-black">
+            <section class="slide-item relative w-full h-screen overflow-hidden">
 
-    <!-- 🔥 背景布局 -->
-    <div class="absolute inset-0 grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
+    <!-- ===== 背景层（4张铺满）===== -->
+    <div class="absolute inset-0 grid grid-cols-2 grid-rows-2">
 
-        <!-- 左：主视觉（IMG_1364） -->
-        <div class="relative rounded-3xl overflow-hidden">
-            <img src="IMG_1364.JPG" class="w-full h-full object-cover object-[center_60%]">
-            <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative">
+            <img src="IMG_1364.JPG" class="w-full h-full object-cover">
         </div>
 
-        <!-- 中：4179 + 4173（缩小居中） -->
-        <div class="flex flex-col items-center justify-center gap-6">
-
-            <div class="w-4/5 h-1/3 rounded-2xl overflow-hidden shadow-xl">
-                <img src="IMG_4179.JPG" class="w-full h-full object-cover">
-            </div>
-
-            <div class="w-4/5 h-1/3 rounded-2xl overflow-hidden shadow-xl">
-                <img src="IMG_4173.JPG" class="w-full h-full object-cover">
-            </div>
-
+        <div class="relative">
+            <img src="IMG_4179.JPG" class="w-full h-full object-cover">
         </div>
 
-        <!-- 右：横图（IMG_4990） -->
-        <div class="relative rounded-3xl overflow-hidden">
-            <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center">
+        <div class="relative">
+            <img src="IMG_4173.JPG" class="w-full h-full object-cover">
+        </div>
 
-            <!-- 数据浮层 -->
-            <div class="absolute bottom-6 left-6 bg-black/70 backdrop-blur-xl px-6 py-3 rounded-xl border border-white/10">
-                <div class="text-white text-lg font-bold">65.3W 浏览</div>
-                <div class="text-white/60 text-xs">CONTENT PERFORMANCE</div>
-            </div>
+        <div class="relative">
+            <img src="IMG_4990.JPG" class="w-full h-full object-cover">
         </div>
 
     </div>
 
-    <!-- 🔥 标题（左上，金属质感，无透明） -->
-    <h1 class="absolute top-10 left-10 z-30 text-4xl md:text-6xl font-black tracking-tight metal-text
-               px-6 py-3">
+    <!-- 🔥 统一暗层（关键！高级感核心） -->
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
 
-        跨界内容创作者
+    <!-- 🔥 渐变（保证文字可读） -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
-    </h1>
 
-</div>
-            </section>
+    <!-- ===== 内容层 ===== -->
+    <div class="relative z-20 h-full flex flex-col justify-between p-10 md:p-16">
+
+        <!-- 标题 -->
+        <div>
+            <h1 class="text-4xl md:text-7xl font-black tracking-tight metal-text mb-6"
+                data-i18n="s3-h1">
+                跨界内容创作者
+            </h1>
+
+            <!-- 标签 -->
+            <div class="flex gap-3 flex-wrap">
+                <span class="ins-tag">职场内容</span>
+                <span class="ins-tag">AI + 创作</span>
+                <span class="ins-tag">跨界表达</span>
+            </div>
+        </div>
+
+
+        <!-- 中间内容（作品表达） -->
+        <div class="max-w-xl">
+            <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                从工程管理到内容表达，构建跨界叙事能力。
+                聚焦职场、AI与个人成长，通过短视频实现结构化输出与传播验证。
+            </p>
+        </div>
+
+
+        <!-- 底部数据 -->
+        <div class="flex justify-between items-end">
+
+            <!-- 数据块 -->
+            <div class="bg-black/60 backdrop-blur-xl px-6 py-4 rounded-2xl border border-white/10">
+                <div class="text-3xl font-black">67W+</div>
+                <div class="text-xs text-white/50 tracking-widest">TOTAL VIEWS</div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-right">
+                <div class="text-white/60 text-xs mb-2">CONTENT PERFORMANCE</div>
+                <div class="text-lg font-bold">持续增长中 →</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
         </div>
 
         <button class="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white/30 hover:text-white transition" onclick="moveHeroSlide(-1)">
