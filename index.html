@@ -251,66 +251,53 @@
             </section>
 
             <section class="slide-item">
-   <div class="absolute inset-0 z-0 p-6 grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
+   <!-- Slide 3：跨界内容创作者（重构版） -->
+<div class="slide-item relative w-full h-screen overflow-hidden bg-black">
 
-    <!-- 左：主视觉（人物） -->
-    <div class="relative rounded-3xl overflow-hidden group">
-        <img src="IMG_1364.JPG" class="w-full h-full object-cover film-tint transition duration-700 group-hover:scale-105">
-        
-        <!-- 暗角增强 -->
-        <div class="absolute inset-0 bg-black/20"></div>
-    </div>
+    <!-- 🔥 背景布局 -->
+    <div class="absolute inset-0 grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
 
-    <!-- 中：内容细节（4179 + 4173） -->
-    <div class="flex flex-col gap-6">
+        <!-- 左：主视觉（IMG_1364） -->
+        <div class="relative rounded-3xl overflow-hidden">
+            <img src="IMG_1364.JPG" class="w-full h-full object-cover object-[center_60%]">
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
 
-        <div class="relative h-1/2 rounded-3xl overflow-hidden group">
-            <img src="IMG_4179.JPG" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+        <!-- 中：4179 + 4173（缩小居中） -->
+        <div class="flex flex-col items-center justify-center gap-6">
 
-            <!-- hover 数据 -->
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm">
-                内容策划 / 脚本设计
+            <div class="w-4/5 h-1/3 rounded-2xl overflow-hidden shadow-xl">
+                <img src="IMG_4179.JPG" class="w-full h-full object-cover">
+            </div>
+
+            <div class="w-4/5 h-1/3 rounded-2xl overflow-hidden shadow-xl">
+                <img src="IMG_4173.JPG" class="w-full h-full object-cover">
+            </div>
+
+        </div>
+
+        <!-- 右：横图（IMG_4990） -->
+        <div class="relative rounded-3xl overflow-hidden">
+            <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center">
+
+            <!-- 数据浮层 -->
+            <div class="absolute bottom-6 left-6 bg-black/70 backdrop-blur-xl px-6 py-3 rounded-xl border border-white/10">
+                <div class="text-white text-lg font-bold">65.3W 浏览</div>
+                <div class="text-white/60 text-xs">CONTENT PERFORMANCE</div>
             </div>
         </div>
 
-        <div class="relative h-1/2 rounded-3xl overflow-hidden group">
-            <img src="IMG_4173.JPG" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-
-            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm">
-                真实用户场景
-            </div>
-        </div>
-
     </div>
 
-    <!-- 右：核心横图（4990） -->
-    <div class="relative rounded-3xl overflow-hidden group">
+    <!-- 🔥 标题（左上，金属质感，无透明） -->
+    <h1 class="absolute top-10 left-10 z-30 text-4xl md:text-6xl font-black tracking-tight metal-text
+               px-6 py-3">
 
-        <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105">
+        跨界内容创作者
 
-        <!-- 🔥 数据浮层（关键） -->
-        <div class="absolute bottom-6 left-6 bg-black/60 backdrop-blur-xl px-6 py-3 rounded-xl border border-white/10">
-            <div class="text-white text-lg font-bold">67W+</div>
-            <div class="text-white/60 text-xs tracking-widest">TOTAL PLAYS</div>
-        </div>
-
-    </div>
+    </h1>
 
 </div>
-                <div class="gradient-overlay"></div>
-                <div class="relative z-20 slide-content">
-                   <h1 class="absolute top-10 left-10 z-30 text-4xl md:text-6xl font-black tracking-tight metal-text
-           px-6 py-3 rounded-2xl backdrop-blur-xl border border-white/10">
-
-    跨界内容创作者
-
-</h1>
-                    <div class="flex flex-wrap gap-3 mb-10">
-                        <span class="ins-tag" data-i18n="s3-t1">职场垂类博主</span>
-                        <span class="ins-tag" data-i18n="s3-t2">67万+ 播放量</span>
-                    </div>
-                    <a href="#projects" class="bg-white text-black px-8 py-4 rounded-full font-bold text-sm inline-block hover:scale-105 transition" data-i18n="s3-btn">访问我的主页</a>
-                </div>
             </section>
         </div>
 
