@@ -184,6 +184,12 @@
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.5);
         }
+        .metal-text {
+    background: linear-gradient(120deg, #ffffff, #cbd5f5, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.85;
+}
     </style>
 </head>
 <body>
@@ -245,37 +251,56 @@
             </section>
 
             <section class="slide-item">
-   <div class="absolute inset-0 z-0 p-4 grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+   <div class="absolute inset-0 z-0 p-6 grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
 
-    <!-- 左：主视觉（竖图） -->
-    <div class="relative rounded-3xl overflow-hidden">
-        <img src="IMG_1364.JPG" class="w-full h-full object-cover film-tint">
+    <!-- 左：主视觉（人物） -->
+    <div class="relative rounded-3xl overflow-hidden group">
+        <img src="IMG_1364.JPG" class="w-full h-full object-cover film-tint transition duration-700 group-hover:scale-105">
+        
+        <!-- 暗角增强 -->
+        <div class="absolute inset-0 bg-black/20"></div>
     </div>
 
-    <!-- 中：两张竖图（你要求的4179 + 4173） -->
-    <div class="flex flex-col gap-4">
-        <div class="h-1/2 rounded-3xl overflow-hidden">
-            <img src="IMG_4179.JPG" class="w-full h-full object-cover object-center film-tint">
+    <!-- 中：内容细节（4179 + 4173） -->
+    <div class="flex flex-col gap-6">
+
+        <div class="relative h-1/2 rounded-3xl overflow-hidden group">
+            <img src="IMG_4179.JPG" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+
+            <!-- hover 数据 -->
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm">
+                内容策划 / 脚本设计
+            </div>
         </div>
-        <div class="h-1/2 rounded-3xl overflow-hidden">
-            <img src="IMG_4173.JPG" class="w-full h-full object-cover object-center film-tint">
+
+        <div class="relative h-1/2 rounded-3xl overflow-hidden group">
+            <img src="IMG_4173.JPG" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm">
+                真实用户场景
+            </div>
         </div>
+
     </div>
 
-    <!-- 右：横向主图（4990） -->
-    <div class="relative rounded-3xl overflow-hidden">
-        <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center film-tint">
-    </div>
+    <!-- 右：核心横图（4990） -->
+    <div class="relative rounded-3xl overflow-hidden group">
 
-</div>
+        <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105">
+
+        <!-- 🔥 数据浮层（关键） -->
+        <div class="absolute bottom-6 left-6 bg-black/60 backdrop-blur-xl px-6 py-3 rounded-xl border border-white/10">
+            <div class="text-white text-lg font-bold">67W+</div>
+            <div class="text-white/60 text-xs tracking-widest">TOTAL PLAYS</div>
+        </div>
+
+    </div>
 
 </div>
                 <div class="gradient-overlay"></div>
                 <div class="relative z-20 slide-content">
-                    <h1 class="absolute top-10 left-10 z-30 text-4xl md:text-6xl font-black tracking-tight 
-           text-white/70 backdrop-blur-sm px-4 py-2 rounded-xl 
-           bg-gradient-to-r from-white/40 via-white/10 to-white/40 
-           border border-white/20 shadow-xl">
+                   <h1 class="absolute top-10 left-10 z-30 text-4xl md:text-6xl font-black tracking-tight metal-text
+           px-6 py-3 rounded-2xl backdrop-blur-xl border border-white/10">
 
     跨界内容创作者
 
