@@ -192,26 +192,34 @@
     opacity: 0.85;
 }
         /* ===== 四图极简高级样式 ===== */
-/* 修改后的跨界创作者板块专属样式 */
+/* 修复后的跨界创作者板块样式 */
 .creator-section {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
-    justify-content: flex-start; /* 改为顶部对齐 */
-    padding-top: 120px; /* 为导航栏留出空间 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center;     /* 水平居中核心 */
+    padding: 80px 5% 40px 5%;
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1200px; /* 限制最大宽度，防止在大屏上散开 */
+    margin: 0 auto;
 }
 
 .image-grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr); /* 手机端 2列 */
+    gap: 12px;
     width: 100%;
     margin-top: 2rem;
 }
 
 @media (min-width: 768px) {
     .image-grid-container {
-        grid-template-columns: repeat(4, 1fr); /* 大屏四列并行 */
-        gap: 24px;
+        grid-template-columns: repeat(4, 1fr); /* 电脑端 4列 */
+        gap: 20px;
     }
 }
 
@@ -219,10 +227,10 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    aspect-ratio: 3 / 4; /* 保持统一纵横比 */
+    transition: all 0.4s ease;
+    aspect-ratio: 3 / 4;
 }
 
 .image-card-v2 img {
@@ -232,16 +240,10 @@
 }
 
 .image-card-v2:hover {
-    transform: translateY(-8px);
-    border-color: rgba(168, 85, 247, 0.4);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    transform: translateY(-5px);
+    border-color: rgba(168, 85, 247, 0.5);
 }
 
-/* hover 很克制（高级点） */
-.image-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-}
   /* Apple 风格卡片 */
 .glass-card {
     border-radius: 20px;
@@ -335,47 +337,38 @@
                 </div>
             </section>
 
-       <section class="slide-item relative w-full h-screen overflow-hidden creator-section">
+      <section class="slide-item relative w-full h-screen creator-section">
 
     <div class="absolute inset-0 -z-10">
-        <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center opacity-20 blur-sm film-tint">
-        <div class="absolute inset-0 bg-black/60"></div>
+        <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center opacity-30 film-tint">
+        <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
-    <div class="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12">
+    <div class="content-wrapper relative z-20">
         
-        <div class="text-left mb-10 md:mb-16">
-            <h1 class="text-4xl md:text-7xl font-black tracking-tighter mb-4 bg-gradient-to-r from-white to-white/40 bg-clip-text text-transparent" data-i18n="s3-h1">
+        <div class="text-left mb-8 md:mb-12">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4" data-i18n="s3-h1">
                 跨界内容创作者
             </h1>
-            <p class="text-white/50 text-sm md:text-lg max-w-xl leading-relaxed">
-                从工程管理到内容表达，通过 AI 与结构化输出，<br class="hidden md:block">
-                构建职场影响力的跨界叙事。
+            <p class="text-white/60 text-sm md:text-base max-w-lg leading-relaxed">
+                职场垂类博主，针对真实用户场景，进行内容策划/脚本设计，播放量超67万。
             </p>
         </div>
 
         <div class="image-grid-container">
-            <div class="image-card-v2">
-                <img src="IMG_1364.JPG" alt="Content 1">
-            </div>
-            <div class="image-card-v2">
-                <img src="IMG_4179.JPG" alt="Content 2">
-            </div>
-            <div class="image-card-v2">
-                <img src="IMG_4173.JPG" alt="Content 3">
-            </div>
-            <div class="image-card-v2">
-                <img src="IMG_4990.JPG" alt="Content 4">
-            </div>
+            <div class="image-card-v2"><img src="IMG_1364.JPG"></div>
+            <div class="image-card-v2"><img src="IMG_4179.JPG"></div>
+            <div class="image-card-v2"><img src="IMG_4173.JPG"></div>
+            <div class="image-card-v2"><img src="IMG_4990.JPG"></div>
         </div>
 
-        <div class="mt-8 flex gap-4">
-            <div class="px-4 py-2 border border-purple-500/30 bg-purple-500/10 rounded-full">
-                <span class="text-xs font-bold tracking-widest text-purple-300">TOTAL PLAYS: 67W+</span>
-            </div>
+        <div class="mt-8 flex items-center gap-3">
+            <div class="h-[1px] w-12 bg-purple-500/50"></div>
+            <span class="text-[10px] font-bold tracking-[0.2em] text-white/40">670,000+ VIEWS / CONTENT STRATEGY</span>
         </div>
     </div>
 </section>
+
         </div>
 
         <button class="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white/30 hover:text-white transition" onclick="moveHeroSlide(-1)">
