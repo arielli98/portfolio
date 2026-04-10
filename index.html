@@ -321,90 +321,71 @@
                 </div>
             </section>
 
-            <section class="slide-item relative p-0 overflow-hidden bg-[#07111f]">
+           <section class="slide-item relative p-0 overflow-hidden bg-[#07111f]">
 
-    <!-- ===== 远景底图：只做氛围，不抢主体 ===== -->
+    <!-- 背景氛围 -->
     <div class="absolute inset-0">
         <img src="IMG_1364.JPG"
-             class="absolute inset-0 w-full h-full object-cover object-center blur-[3px] scale-110 opacity-35 film-tint">
-        <div class="absolute inset-0 bg-black/45"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-[#07111f]"></div>
+             class="absolute inset-0 w-full h-full object-cover blur-[3px] scale-110 opacity-35">
+        <div class="absolute inset-0 bg-black/50"></div>
     </div>
 
-    <!-- ===== 四张图：错位漂浮展示 ===== -->
+    <!-- PC 四图布局 -->
     <div class="absolute inset-0 z-10 pointer-events-none hidden md:block">
 
         <div class="creator-panel creator-panel-one">
-            <img src="IMG_1364.JPG" class="w-full h-full object-cover object-[center_55%]">
+            <img src="IMG_1364.JPG">
         </div>
 
         <div class="creator-panel creator-panel-two">
-            <img src="IMG_4179.JPG" class="w-full h-full object-cover object-center">
+            <img src="IMG_4179.JPG">
         </div>
 
         <div class="creator-panel creator-panel-three">
-            <img src="IMG_4173.JPG" class="w-full h-full object-cover object-center">
+            <img src="IMG_4173.JPG">
         </div>
 
         <div class="creator-panel creator-panel-four">
-            <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center">
-            <div class="absolute bottom-5 left-5 bg-black/70 backdrop-blur-xl px-5 py-3 rounded-2xl border border-white/10">
-                <div class="text-white text-xl md:text-3xl font-black leading-none">65.3W</div>
-                <div class="text-white/60 text-[11px] tracking-[0.35em] mt-2">CONTENT PERFORMANCE</div>
-            </div>
+            <img src="IMG_4990.JPG">
         </div>
+
     </div>
 
-    <!-- ===== 移动端：两行网格，避免挤成一团 ===== -->
+    <!-- 移动端 -->
     <div class="absolute inset-0 z-10 grid grid-cols-2 gap-3 p-4 md:hidden">
-        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-            <img src="IMG_1364.JPG" class="w-full h-full object-cover object-center">
+        <div class="rounded-3xl overflow-hidden border border-white/10">
+            <img src="IMG_1364.JPG" class="w-full h-full object-cover">
         </div>
-        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-            <img src="IMG_4179.JPG" class="w-full h-full object-cover object-center">
+        <div class="rounded-3xl overflow-hidden border border-white/10">
+            <img src="IMG_4179.JPG" class="w-full h-full object-cover">
         </div>
-        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-            <img src="IMG_4173.JPG" class="w-full h-full object-cover object-center">
+        <div class="rounded-3xl overflow-hidden border border-white/10">
+            <img src="IMG_4173.JPG" class="w-full h-full object-cover">
         </div>
-        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative">
-            <img src="IMG_4990.JPG" class="w-full h-full object-cover object-center">
-            <div class="absolute bottom-3 left-3 bg-black/70 backdrop-blur-xl px-4 py-2 rounded-xl border border-white/10">
-                <div class="text-white text-lg font-black leading-none">65.3W</div>
-            </div>
+        <div class="rounded-3xl overflow-hidden border border-white/10">
+            <img src="IMG_4990.JPG" class="w-full h-full object-cover">
         </div>
     </div>
 
-    <!-- ===== 文案层 ===== -->
-    <div class="relative z-20 h-full w-full flex flex-col justify-between px-6 md:px-14 py-10 md:py-14">
+    <!-- 文案 -->
+    <div class="relative z-20 h-full flex flex-col justify-between px-6 md:px-14 py-10">
 
-        <div class="max-w-4xl mt-[8vh] md:mt-[10vh]">
-            <h1 class="text-4xl md:text-7xl font-black tracking-tight metal-text mb-5"
-                data-i18n="s3-h1">
+        <div class="mt-[10vh]">
+            <h1 class="text-4xl md:text-7xl font-black metal-text mb-6">
                 跨界内容创作者
             </h1>
 
-            <div class="flex flex-wrap gap-3">
+            <div class="flex gap-3 flex-wrap">
                 <span class="ins-tag">职场内容</span>
                 <span class="ins-tag">AI + 创作</span>
                 <span class="ins-tag">跨界表达</span>
             </div>
 
-            <p class="mt-6 max-w-xl text-white/75 leading-relaxed text-sm md:text-base">
-                从工程管理到内容表达，构建跨界叙事能力。聚焦职场、AI 与个人成长，通过短视频实现结构化输出与传播验证。
+            <p class="mt-6 max-w-xl text-white/70">
+                从工程管理到内容表达，构建跨界叙事能力。聚焦职场、AI与个人成长，通过短视频实现结构化输出与传播验证。
             </p>
         </div>
 
-        <div class="flex items-end justify-between gap-6">
-            <div class="bg-black/60 backdrop-blur-xl px-6 py-4 rounded-2xl border border-white/10 shadow-2xl">
-                <div class="text-3xl md:text-5xl font-black leading-none">67W+</div>
-                <div class="text-[11px] text-white/50 tracking-[0.35em] mt-3">TOTAL VIEWS</div>
-            </div>
-
-            <div class="hidden md:block text-right">
-                <div class="text-white/60 text-xs tracking-[0.25em] mb-2">CONTENT CREATOR</div>
-                <div class="text-lg font-bold">短视频内容输出与传播</div>
-            </div>
-        </div>
     </div>
 </section>
         </div>
