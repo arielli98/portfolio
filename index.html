@@ -105,11 +105,14 @@
             transform: translateY(0);
         }
 
-        .film-tint {
-            filter: contrast(1.1) brightness(0.7) saturate(0.9);
-            transition: transform 2s ease;
-        }
-        .active .film-tint { transform: scale(1.05); }
+       .film-tint {
+    filter: brightness(0.75) contrast(1.05);
+    transition: transform 6s ease;
+}
+
+.active .film-tint {
+    transform: scale(1.08);
+}
 
         .gradient-overlay {
             position: absolute;
@@ -219,41 +222,58 @@
                 </div>
             </section>
 
-           <section class="slide-item p-0 overflow-hidden bg-black">
-    <div class="absolute inset-0 flex w-full h-full z-0">
-        <div class="relative w-1/3 h-full overflow-hidden border-r border-white/10">
-            <img src="IMG_0024.jpg" class="w-full h-full object-cover film-tint">
+           <section class="slide-item p-0 overflow-hidden">
+
+    <!-- 三图背景 -->
+    <div class="absolute inset-0 flex w-full h-full">
+
+        <!-- 左 -->
+        <div class="w-1/3 h-full overflow-hidden">
+            <img src="IMG_4990.jpg"
+                 class="w-full h-full object-cover film-tint opacity-70 scale-110">
         </div>
-        <div class="relative w-1/3 h-full overflow-hidden border-r border-white/10">
-            <img src="IMG_4990.JPG" class="w-full h-full object-cover film-tint">
+
+        <!-- 中（主视觉） -->
+        <div class="w-1/3 h-full overflow-hidden relative">
+            <img src="IMG_0024.JPG"
+                 class="w-full h-full object-cover film-tint scale-105">
+            <div class="absolute inset-0 bg-black/20"></div>
         </div>
-        <div class="relative w-1/3 h-full overflow-hidden">
-            <img src="IMG_4179.JPG" class="w-full h-full object-cover film-tint">
+
+        <!-- 右 -->
+        <div class="w-1/3 h-full overflow-hidden">
+            <img src="IMG_4179.JPG"
+                 class="w-full h-full object-cover film-tint opacity-70 scale-110">
         </div>
+
     </div>
 
-    <div class="gradient-overlay"></div>
+    <!-- 融合层（关键） -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-black z-10"></div>
 
-    <div class="relative z-20 h-full w-full flex flex-col justify-start items-start pt-32 px-12 slide-content">
-        <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tighter leading-tight" data-i18n="s3-h1">
+    <!-- 内容 -->
+    <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-6 slide-content">
+
+        <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tight">
             跨界内容创作者
         </h1>
-        
-        <div class="flex flex-wrap gap-3 mb-4">
-            <span class="ins-tag" data-i18n="s3-t1" style="background: rgba(255,255,255,0.1);">总播放量超 67 万</span>
-            <span class="ins-tag" data-i18n="s3-t2" style="background: rgba(255,255,255,0.1);">聚焦职场 · AI · 个人成长</span>
+
+        <p class="text-white/70 mb-8 text-lg md:text-xl">
+            聚焦职场 · AI · 个人成长
+        </p>
+
+        <div class="flex gap-3 flex-wrap justify-center mb-10">
+            <span class="ins-tag">职场内容</span>
+            <span class="ins-tag">AI 内容</span>
+            <span class="ins-tag">Vlogger</span>
         </div>
 
-        <div class="flex flex-wrap gap-3 mb-10">
-            <span class="ins-tag opacity-70" data-i18n="s3-t3" style="font-size: 11px; padding: 4px 12px;">职场内容</span>
-            <span class="ins-tag opacity-70" data-i18n="s3-t4" style="font-size: 11px; padding: 4px 12px;">AI 内容</span>
-            <span class="ins-tag opacity-70" data-i18n="s3-t5" style="font-size: 11px; padding: 4px 12px;">Vlogger</span>
-        </div>
-
-        <a href="#" class="text-sm font-bold border-b border-white pb-1 hover:opacity-70 transition" data-i18n="s3-btn">
+        <a href="#" class="text-sm font-semibold border-b border-white pb-1 hover:opacity-70">
             访问我的主页 →
         </a>
+
     </div>
+
 </section>
         </div>
         <button class="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white/30 hover:text-white" onclick="moveHeroSlide(-1)">
