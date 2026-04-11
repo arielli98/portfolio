@@ -9,13 +9,11 @@
     <style>
         :root {
             --mint: #a7f3d0;
-            /* 背景颜色变量定义，方便后续微调 */
-            --bg-base: #000000;            /* 纯黑基底 */
-            --glow-purple: rgba(168, 85, 247, 0.25); /* 紫色晕染：#A855F7 透明度25% */
-            --glow-blue: rgba(59, 130, 246, 0.35);   /* 蓝色晕染：#3B82F6 透明度35% */
+            --bg-base: #000000;
+            --glow-purple: rgba(168, 85, 247, 0.25);
+            --glow-blue: rgba(59, 130, 246, 0.35);
         }
 
-        /* ======== 核心修改：蓝紫霓虹氛围感背景 ======== */
         body {
             background-color: var(--bg-base);
             color: #fff;
@@ -25,7 +23,6 @@
             position: relative;
         }
 
-        /* 创建左上角紫色漫射光 */
         body::before {
             content: "";
             position: fixed;
@@ -34,12 +31,11 @@
             width: 70vw;
             height: 70vw;
             background: radial-gradient(circle, var(--glow-purple) 0%, transparent 70%);
-            filter: blur(120px); /* 极度柔和边缘 */
-            z-index: -1; /* 确保在内容之下 */
+            filter: blur(120px);
+            z-index: -1;
             pointer-events: none;
         }
 
-        /* 创建右下角蓝色漫射光 */
         body::after {
             content: "";
             position: fixed;
@@ -48,12 +44,11 @@
             width: 70vw;
             height: 70vw;
             background: radial-gradient(circle, var(--glow-blue) 0%, transparent 70%);
-            filter: blur(120px); /* 极度柔和边缘 */
+            filter: blur(120px);
             z-index: -1;
             pointer-events: none;
         }
 
-        /* 导航栏 */
         .nav-glass {
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(20px);
@@ -75,7 +70,6 @@
         }
         .lang-switch-btn:hover { background: #fff; color: #000; }
 
-        /* ======== 首页滑动核心逻辑（保持不变） ======== */
         .hero-slider-container {
             position: relative;
             width: 100vw;
@@ -120,7 +114,6 @@
         .gradient-overlay {
             position: absolute;
             inset: 0;
-            /* 底部遮罩调整为更深的黑，以便更好地承接背景 */
             background: linear-gradient(to top, var(--bg-base) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
             z-index: 10;
         }
@@ -132,9 +125,9 @@
             padding: 6px 16px;
             border-radius: 100px;
             font-size: 13px;
+            white-space: nowrap;
         }
 
-        /* ======== 精选项目动态卡片样式（保持不变） ======== */
         .bento-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -151,16 +144,6 @@
             border-color: rgba(168, 85, 247, 0.4);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-
-        .bento-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.05), transparent);
-            transform: translateX(-100%);
-            transition: 0.6s;
-        }
-        .bento-card:hover::before { transform: translateX(100%); }
 
         .tag-mint {
             background: rgba(167, 243, 208, 0.1);
@@ -184,99 +167,6 @@
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.5);
         }
-        
-        .metal-text {
-    background: linear-gradient(120deg, #ffffff, #cbd5f5, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0.85;
-}
-        /* ===== 四图极简高级样式 ===== */
-/* 修复后的跨界创作者板块样式 */
-.creator-section {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center; /* 垂直居中 */
-    align-items: center;     /* 水平居中核心 */
-    padding: 80px 5% 40px 5%;
-    box-sizing: border-box;
-}
-
-.content-wrapper {
-    width: 100%;
-    max-width: 1200px; /* 限制最大宽度，防止在大屏上散开 */
-    margin: 0 auto;
-}
-
-.image-grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 手机端 2列 */
-    gap: 12px;
-    width: 100%;
-    margin-top: 2rem;
-}
-
-@media (min-width: 768px) {
-    .image-grid-container {
-        grid-template-columns: repeat(4, 1fr); /* 电脑端 4列 */
-        gap: 20px;
-    }
-}
-
-.image-card-v2 {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.4s ease;
-    aspect-ratio: 3 / 4;
-}
-
-.image-card-v2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.image-card-v2:hover {
-    transform: translateY(-5px);
-    border-color: rgba(168, 85, 247, 0.5);
-}
-
-  /* Apple 风格卡片 */
-.glass-card {
-    border-radius: 20px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.glass-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* 轻微交互（高级感来源） */
-.glass-card:hover {
-    transform: translateY(-6px) scale(1.03);
-}
-        .image-inner {
-    width: 100%;
-    aspect-ratio: 4 / 5; /* 核心：控制高级比例 */
-    overflow: hidden;
-}
-
-.image-inner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
     </style>
 </head>
 <body>
@@ -295,34 +185,24 @@
 
     <div class="hero-slider-container" id="home">
         <div class="pagination-indicator" id="slideIndicator">1 / 3</div>
-
         <div class="hero-slider-track" id="heroTrack">
             <section class="slide-item active">
                 <img src="IMG_2357.JPG" class="absolute inset-0 w-full h-full object-cover object-top film-tint z-0">
                 <div class="gradient-overlay"></div>
-               <div class="relative z-20 w-full md:w-1/2 slide-content flex flex-col items-center md:items-start">
-
-    <!-- 半身形象照 -->
-    <div class="mb-6 relative">
-        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border border-white/20 shadow-2xl backdrop-blur-xl">
-            <img src="IMG_4169.JPG" class="w-full h-full object-cover object-top">
-        </div>
-        <div class="absolute inset-0 rounded-full bg-purple-500/20 blur-2xl -z-10"></div>
-    </div>
-
-    <!-- 标题 -->
-    <h1 class="text-3xl md:text-4xl font-black mb-6 tracking-tight" data-i18n="s1-h1">
-    伦敦国王学院<br>工程管理硕士
-</h1>
-
-    <!-- 标签 -->
-    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-        <span class="ins-tag" data-i18n="s1-t1">伦敦国王学院</span>
-        <span class="ins-tag" data-i18n="s1-t2">南京师范大学</span>
-        <span class="ins-tag" data-i18n="s1-t3">全局项目管理</span>
-    </div>
-
-</div>
+                <div class="relative z-20 w-full md:w-1/2 slide-content flex flex-col items-center md:items-start">
+                    <div class="mb-6 relative">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border border-white/20 shadow-2xl backdrop-blur-xl">
+                            <img src="IMG_4169.JPG" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="absolute inset-0 rounded-full bg-purple-500/20 blur-2xl -z-10"></div>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-black mb-6 tracking-tight text-center md:text-left" data-i18n="s1-h1">伦敦国王学院<br>工程管理硕士</h1>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <span class="ins-tag" data-i18n="s1-t1">伦敦国王学院</span>
+                        <span class="ins-tag" data-i18n="s1-t2">南京师范大学</span>
+                        <span class="ins-tag" data-i18n="s1-t3">全局项目管理</span>
+                    </div>
+                </div>
             </section>
 
             <section class="slide-item">
@@ -335,53 +215,40 @@
                         <span class="ins-tag" data-i18n="s2-t2">绿米联创 (Aqara)</span>
                     </div>
                 </div>
+            </section>
+
             <section class="slide-item p-0 overflow-hidden">
-                <div class="absolute inset-0 flex w-full h-full">
+                <div class="absolute inset-0 flex w-full h-full z-0">
                     <div class="relative w-1/3 h-full overflow-hidden border-r border-white/10">
                         <img src="IMG_0024.JPG" class="w-full h-full object-cover film-tint">
-                        <div class="absolute inset-0 bg-black/20"></div>
                     </div>
-                    
                     <div class="relative w-1/3 h-full overflow-hidden border-r border-white/10">
                         <img src="IMG_4990.JPG" class="w-full h-full object-cover film-tint">
-                        <div class="absolute inset-0 bg-black/20"></div>
                     </div>
-
                     <div class="relative w-1/3 h-full overflow-hidden">
                         <img src="IMG_4179.JPG" class="w-full h-full object-cover film-tint">
-                        <div class="absolute inset-0 bg-black/20"></div>
                     </div>
                 </div>
-
                 <div class="gradient-overlay"></div>
-
                 <div class="relative z-20 h-full w-full flex flex-col justify-start items-start pt-32 px-12 slide-content">
-                    <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tighter leading-tight" data-i18n="s3-h1">
-                        跨界内容创作者
-                    </h1>
-                    
+                    <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tighter leading-tight" data-i18n="s3-h1">跨界内容创作者</h1>
                     <div class="flex flex-wrap gap-3 mb-4">
-                        <span class="ins-tag" data-i18n="s3-t1" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">总播放量超 67 万</span>
-                        <span class="ins-tag" data-i18n="s3-t2" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">聚焦职场 · AI · 个人成长</span>
+                        <span class="ins-tag" data-i18n="s3-t1" style="background: rgba(255,255,255,0.1);">总播放量超 67 万</span>
+                        <span class="ins-tag" data-i18n="s3-t2" style="background: rgba(255,255,255,0.1);">聚焦职场 · AI · 个人成长</span>
                     </div>
-
                     <div class="flex flex-wrap gap-3 mb-10">
                         <span class="ins-tag opacity-70" data-i18n="s3-t3" style="font-size: 11px; padding: 4px 12px;">职场内容</span>
                         <span class="ins-tag opacity-70" data-i18n="s3-t4" style="font-size: 11px; padding: 4px 12px;">AI 内容</span>
                         <span class="ins-tag opacity-70" data-i18n="s3-t5" style="font-size: 11px; padding: 4px 12px;">Vlogger</span>
                     </div>
-
-                    <a href="#" class="text-sm font-bold border-b border-white pb-1 hover:opacity-70 transition" data-i18n="s3-btn">
-                        访问我的主页 →
-                    </a>
+                    <a href="#" class="text-sm font-bold border-b border-white pb-1 hover:opacity-70 transition" data-i18n="s3-btn">访问我的主页 →</a>
                 </div>
             </section>
         </div>
-
-        <button class="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white/30 hover:text-white transition" onclick="moveHeroSlide(-1)">
+        <button class="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white/30 hover:text-white" onclick="moveHeroSlide(-1)">
             <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
         </button>
-        <button class="absolute right-6 top-1/2 -translate-y-1/2 z-50 text-white/30 hover:text-white transition" onclick="moveHeroSlide(1)">
+        <button class="absolute right-6 top-1/2 -translate-y-1/2 z-50 text-white/30 hover:text-white" onclick="moveHeroSlide(1)">
             <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
         </button>
     </div>
@@ -416,7 +283,6 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl font-black mb-20 text-center" data-i18n="proj-title">精选项目</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
                 <div class="bento-card reveal group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
                     <div class="flex justify-between items-start mb-10">
                         <span class="tag-mint" data-i18n="tag-hardware">机器人与自动化系统</span>
@@ -425,13 +291,7 @@
                         </div>
                     </div>
                     <h3 class="text-3xl font-bold mb-6" data-i18n="p-rob-title">智能机械臂与自动化操纵器开发</h3>
-                    <p class="text-gray-400 leading-relaxed mb-8" data-i18n="p-rob-desc">
-                        融合硬件控制与项目管理，基于树莓派研发自动控制系统。通过关键路径规划将项目成本缩减 20%，相关方案已被 BlueSky Robotics 采纳应用于工业组装领域。
-                    </p>
-                    <div class="flex gap-3">
-                        <span class="text-[10px] px-3 py-1 border border-white/10 rounded-full opacity-50">Raspberry Pi</span>
-                        <span class="text-[10px] px-3 py-1 border border-white/10 rounded-full opacity-50">Control Systems</span>
-                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8" data-i18n="p-rob-desc">融合硬件控制与项目管理，基于树莓派研发自动控制系统。方案已被 BlueSky Robotics 采纳应用于工业组装领域。</p>
                 </div>
 
                 <div class="bento-card reveal group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
@@ -442,25 +302,7 @@
                         </div>
                     </div>
                     <h3 class="text-3xl font-bold mb-6" data-i18n="p1-title">搭建个人 AI 助手系统</h3>
-                    <p class="text-gray-400 leading-relaxed mb-8" data-i18n="p1-desc">利用 Open Claw 搭建专属工作流，实现 AI 行业资讯自动收集、竞品分析报告输出及自动化生成 PRD，大幅提升产品调研效率。</p>
-                    <div class="flex gap-3">
-                        <span class="text-[10px] px-3 py-1 border border-white/10 rounded-full opacity-50">Open Claw</span>
-                        <span class="text-[10px] px-3 py-1 border border-white/10 rounded-full opacity-50">Automation</span>
-                    </div>
-                </div>
-
-                <div class="bento-card reveal md:col-span-2 group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
-                    <div class="flex flex-col md:flex-row justify-between gap-10">
-                        <div class="md:w-2/3">
-                            <span class="tag-mint mb-8 inline-block" data-i18n="tag-creator">内容创作</span>
-                            <h3 class="text-4xl font-black mb-6" data-i18n="p4-title">职场垂类短视频账号孵化</h3>
-                            <p class="text-gray-400 leading-relaxed" data-i18n="p4-desc">独立策划职场博主定位与脚本，累计发布 13 条高质作品，总播放量突破 67 万。通过数据回测建立内容迭代机制，验证了跨界传播的敏捷运营能力。</p>
-                        </div>
-                        <div class="md:w-1/3 flex flex-col items-center justify-center border-l border-white/5">
-                            <div class="text-7xl font-black text-white italic tracking-tighter">67W+</div>
-                            <div class="text-[10px] text-gray-500 tracking-[0.3em] mt-4" data-i18n="tag-impressions">TOTAL PLAYS</div>
-                        </div>
-                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8" data-i18n="p1-desc">利用 Open Claw 搭建专属工作流，实现 AI 行业资讯自动收集、竞品分析报告输出及自动化生成 PRD。</p>
                 </div>
             </div>
         </div>
@@ -469,7 +311,6 @@
     <section id="contact" class="py-32 px-6">
         <div class="max-w-3xl mx-auto text-center reveal">
             <h2 class="text-5xl font-black mb-6 italic" data-i18n="contact-h">随时沟通</h2>
-            <p class="text-gray-400 mb-12" data-i18n="contact-p">期待探讨产品创新、全球项目交付或内容创作的新可能。</p>
             <div class="inline-flex flex-col md:flex-row gap-12 p-12 rounded-[40px] border border-white/10 bg-white/[0.02] backdrop-blur-xl">
                 <a href="mailto:ariel1998@163.com" class="text-xl font-bold hover:text-blue-400 transition">ariel1998@163.com</a>
                 <a href="tel:19873174762" class="text-xl font-bold hover:text-purple-400 transition">198 7317 4762</a>
@@ -498,12 +339,8 @@
 
         function handleTilt(e, card) {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = (centerY - y) / 20;
-            const rotateY = (x - centerX) / 20;
+            const rotateX = (rect.height / 2 - (e.clientY - rect.top)) / 20;
+            const rotateY = ((e.clientX - rect.left) - rect.width / 2) / 20;
             card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
         }
 
@@ -516,36 +353,29 @@
                 "nav-logo": "李清扬", "nav-exp": "职业经历", "nav-proj": "项目实战", "nav-contact": "联系",
                 "s1-h1": "伦敦国王学院 工程管理硕士", "s1-t1": "伦敦国王学院", "s1-t2": "南京师范大学", "s1-t3": "全局项目管理",
                 "s2-h1": "企业履历", "s2-t1": "中国能建 (CEEC)", "s2-t2": "绿米联创 (Aqara)",
-                "s3-h1": "跨界内容创作者", 
-                "s3-t1": "总播放量超 67 万", 
-                "s3-t2": "聚焦职场 · AI · 个人成长",
-                "s3-t3": "职场内容",
-                "s3-t4": "AI 内容",
-                "s3-t5": "Vlogger",
+                "s3-h1": "跨界内容创作者", "s3-t1": "总播放量超 67 万", "s3-t2": "聚焦职场 · AI · 个人成长",
+                "s3-t3": "职场内容", "s3-t4": "AI 内容", "s3-t5": "Vlogger", "s3-btn": "访问我的主页 →",
                 "exp-title": "工作实战", "exp-ceec-name": "中国能源建设集团", "exp-aqara-name": "深圳绿米联创",
                 "exp-2-1": "累计参与项目 40 余项，年度完成合同额 6000W+，利润率提升至 12%。",
                 "exp-2-2": "全英文主导跨国会议，精准转化海外客户需求，统筹跨国供应链。",
                 "exp-1-1": "主导 AIoT 智能设备多场景解决方案，撰写 PRD，公测满意度达 95%。",
                 "exp-1-3": "建立用户反馈机制，作为内审员帮助公司构建流程自动化。",
-                "proj-title": "精选项目", "tag-hardware": "机器人与自动化系统", "tag-ai": "个人 AI 助手", "tag-creator": "内容创作", "tag-impressions": "总播放量",
+                "proj-title": "精选项目", "tag-hardware": "机器人与自动化系统", "tag-ai": "个人 AI 助手",
                 "p-rob-title": "智能机械臂与自动化操纵器开发", "p-rob-desc": "融合硬件控制与项目管理，研发自动控制系统，将项目成本缩减 20%，方案获 BlueSky Robotics 采纳应用。",
                 "p1-title": "搭建个人 AI 助手系统", "p1-desc": "利用 Open Claw 搭建专属工作流，实现 AI 行业资讯自动收集、竞品分析报告输出及自动化生成 PRD。",
-                "p4-title": "职场垂类短视频账号孵化", "p4-desc": "独立策划职场博主定位与脚本，总播放量突破 67 万。通过数据回测建立内容迭代机制。",
-                "contact-h": "随时沟通", "contact-p": "期待探讨产品创新、全球项目交付或内容创作的新可能。",
-                "footer-text": "© 2026 李清扬 | PRODUCT MANAGER"
+                "contact-h": "随时沟通", "footer-text": "© 2026 李清扬 | PRODUCT MANAGER"
             },
             en: {
                 "nav-logo": "LI QINGYANG", "nav-exp": "EXPERIENCE", "nav-proj": "PROJECTS", "nav-contact": "CONTACT",
                 "s1-h1": "KCL Eng. Mgmt Master", "s1-t1": "King's College London", "s1-t2": "Nanjing Normal Univ.", "s1-t3": "Global PM",
                 "s2-h1": "ENTERPRISE", "s2-t1": "CEEC", "s2-t2": "Aqara",
-                "s3-h1": "CONTENT CREATOR", "s3-t1": "Career Vlogger", "s3-t2": "670K+ Plays", "s3-btn": "Visit Channel",
+                "s3-h1": "Global Citizen<br>Content Creator", "s3-t1": "670K+ Total Views", "s3-t2": "Career · AI · Growth",
+                "s3-t3": "Career Content", "s3-t4": "AI Insights", "s3-t5": "Vlogger", "s3-btn": "Visit Channel →",
                 "exp-title": "Experience", "exp-ceec-name": "CEEC Group", "exp-aqara-name": "Aqara (Xiaomi)",
-                "proj-title": "Selected Projects", "tag-hardware": "Robotics System", "tag-ai": "AI AGENT", "tag-creator": "CONTENT", "tag-impressions": "PLAYS",
-                "p-rob-title": "Robotic Arm & Manipulator System", "p-rob-desc": "Integrated hardware control with project management to reduce costs by 20%. Solutions adopted by BlueSky Robotics.",
-                "p1-title": "Personal AI Assistant System", "p1-desc": "Built automated workflows using Open Claw for market research, competitor analysis, and PRD generation.",
-                "p4-title": "Career Vlogger Incubation", "p4-desc": "Strategic positioning and script writing for professional content. Achieved 670k+ views with data-driven iterations.",
-                "contact-h": "Let's Connect", "contact-p": "Looking forward to discussing product innovation and global project delivery.",
-                "footer-text": "© 2026 LI QINGYANG | PM"
+                "proj-title": "Selected Projects", "tag-hardware": "Robotics System", "tag-ai": "AI AGENT",
+                "p-rob-title": "Robotic Arm & Manipulator System", "p-rob-desc": "Integrated hardware control with project management. Solutions adopted by BlueSky Robotics.",
+                "p1-title": "Personal AI Assistant System", "p1-desc": "Built automated workflows for market research and PRD generation using Open Claw.",
+                "contact-h": "Let's Connect", "footer-text": "© 2026 LI QINGYANG | PM"
             }
         };
 
