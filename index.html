@@ -388,29 +388,37 @@
                 "nav-logo": "李清扬", "nav-exp": "职业经历", "nav-proj": "项目实战", "nav-contact": "联系",
                 "s1-h1": "伦敦国王学院 工程管理硕士", "s1-t1": "伦敦国王学院", "s1-t2": "南京师范大学", "s1-t3": "全局项目管理",
                 "s2-h1": "企业履历", "s2-t1": "中国能建 (CEEC)", "s2-t2": "绿米联创 (Aqara)",
-                "s3-h1": "跨界内容创作者", "s3-t1": "总播放量超 67 万", "s3-t2": "聚焦职场 · AI · 个人成长",
+                "s3-h1": "跨界内容创作者", 
+                "s3-t1": "总播放量超 67 万", "s3-t2": "聚焦职场 · AI · 个人成长",
                 "s3-t3": "职场内容", "s3-t4": "AI 内容", "s3-t5": "Vlogger", "s3-btn": "访问我的主页 →",
                 "exp-title": "工作实战", "exp-ceec-name": "中国能源建设集团", "exp-aqara-name": "深圳绿米联创",
                 "exp-2-1": "累计参与项目 40 余项，年度完成合同额 6000W+，利润率提升至 12%。",
                 "exp-2-2": "全英文主导跨国会议，精准转化海外客户需求，统筹跨国供应链。",
                 "exp-1-1": "主导 AIoT 智能设备多场景解决方案，撰写 PRD，公测满意度达 95%。",
                 "exp-1-3": "建立用户反馈机制，作为内审员帮助公司构建流程自动化。",
-                "proj-title": "精选项目", "tag-hardware": "机器人与自动化系统", "tag-ai": "个人 AI 助手",
+                "proj-title": "精选项目", "tag-hardware": "机器人与自动化系统", "tag-ai": "个人 AI 助手", 
+                "tag-creator": "内容创作", "tag-impressions": "总播放量",
                 "p-rob-title": "智能机械臂与自动化操纵器开发", "p-rob-desc": "融合硬件控制与项目管理，研发自动控制系统，将项目成本缩减 20%，方案获 BlueSky Robotics 采纳应用。",
                 "p1-title": "搭建个人 AI 助手系统", "p1-desc": "利用 Open Claw 搭建专属工作流，实现 AI 行业资讯自动收集、竞品分析报告输出及自动化生成 PRD。",
-                "contact-h": "随时沟通", "footer-text": "© 2026 李清扬 | PRODUCT MANAGER"
+                "p4-title": "职场垂类短视频账号孵化", "p4-desc": "独立策划职场博主定位与脚本，总播放量突破 67 万。通过数据回测建立内容迭代机制。",
+                "contact-h": "随时沟通", "contact-p": "期待探讨产品创新、全球项目交付或内容创作的新可能。",
+                "footer-text": "© 2026 李清扬 | PRODUCT MANAGER"
             },
             en: {
                 "nav-logo": "LI QINGYANG", "nav-exp": "EXPERIENCE", "nav-proj": "PROJECTS", "nav-contact": "CONTACT",
                 "s1-h1": "KCL Eng. Mgmt Master", "s1-t1": "King's College London", "s1-t2": "Nanjing Normal Univ.", "s1-t3": "Global PM",
                 "s2-h1": "ENTERPRISE", "s2-t1": "CEEC", "s2-t2": "Aqara",
-                "s3-h1": "Global Citizen<br>Content Creator", "s3-t1": "670K+ Total Views", "s3-t2": "Career · AI · Growth",
-                "s3-t3": "Career Content", "s3-t4": "AI Insights", "s3-t5": "Vlogger", "s3-btn": "Visit Channel →",
+                "s3-h1": "Cross-border Content Creator", 
+                "s3-t1": "670K+ Total Views", "s3-t2": "Career · AI · Growth",
+                "s3-t3": "Career", "s3-t4": "AI Insights", "s3-t5": "Vlogger", "s3-btn": "Visit Channel →",
                 "exp-title": "Experience", "exp-ceec-name": "CEEC Group", "exp-aqara-name": "Aqara (Xiaomi)",
-                "proj-title": "Selected Projects", "tag-hardware": "Robotics System", "tag-ai": "AI AGENT",
+                "proj-title": "Selected Projects", "tag-hardware": "Robotics System", "tag-ai": "AI AGENT", 
+                "tag-creator": "CONTENT", "tag-impressions": "PLAYS",
                 "p-rob-title": "Robotic Arm & Manipulator System", "p-rob-desc": "Integrated hardware control with project management. Solutions adopted by BlueSky Robotics.",
                 "p1-title": "Personal AI Assistant System", "p1-desc": "Built automated workflows for market research and PRD generation using Open Claw.",
-                "contact-h": "Let's Connect", "footer-text": "© 2026 LI QINGYANG | PM"
+                "p4-title": "Career Vlogger Incubation", "p4-desc": "Strategic positioning and script writing for professional content. Achieved 670k+ views with data-driven iterations.",
+                "contact-h": "Let's Connect", "contact-p": "Looking forward to discussing product innovation and global project delivery.",
+                "footer-text": "© 2026 LI QINGYANG | PM"
             }
         };
 
@@ -420,7 +428,9 @@
             document.getElementById('langBtn').innerText = currentLang === 'zh' ? 'ENGLISH' : '中文';
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if(i18n[currentLang][key]) el.innerHTML = i18n[currentLang][key];
+                if(i18n[currentLang][key]) {
+                    el.innerHTML = i18n[currentLang][key]; // 替换对应文本
+                }
             });
         }
 
