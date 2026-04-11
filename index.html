@@ -198,10 +198,8 @@
                             <img src="IMG_4169.JPG" class="w-full h-full object-cover object-top">
                         </div>
                         <div class="absolute inset-0 rounded-full bg-purple-500/20 blur-2xl -z-10"></div>
-                    <h1 class="text-3xl md:text-5xl font-black mb-6 tracking-tight text-center md:text-left leading-tight">
-    <span class="block mb-2" data-i18n="s1-h1-line1">伦敦国王学院</span>
-    <span class="text-2xl md:text-3xl opacity-80 font-medium" data-i18n="s1-h1-line2">工程管理硕士</span>
-</h1>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-black mb-6 tracking-tight text-center md:text-left" data-i18n="s1-h1">伦敦国王学院<br>工程管理硕士</h1>
                     <div class="flex flex-wrap gap-3 justify-center md:justify-start">
                         <span class="ins-tag" data-i18n="s1-t1">伦敦国王学院</span>
                         <span class="ins-tag" data-i18n="s1-t2">南京师范大学</span>
@@ -222,58 +220,41 @@
                 </div>
             </section>
 
-           <section class="slide-item p-0 overflow-hidden">
-
-    <!-- 三图背景 -->
-    <div class="absolute inset-0 flex w-full h-full">
-
-        <!-- 左 -->
-        <div class="w-1/3 h-full overflow-hidden">
-            <img src="IMG_4990.JPG"
-                 class="w-full h-full object-cover film-tint opacity-70 scale-110">
+           <section class="slide-item p-0 overflow-hidden bg-black">
+    <div class="absolute inset-0 flex w-full h-full z-0">
+        <div class="relative w-1/3 h-full overflow-hidden border-r border-white/10">
+            <img src="IMG_0024.jpg" class="w-full h-full object-cover film-tint">
         </div>
-
-        <!-- 中（主视觉） -->
-        <div class="w-1/3 h-full overflow-hidden relative">
-            <img src="IMG_0024.jpg"
-                 class="w-full h-full object-cover film-tint scale-105">
-            <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative w-1/3 h-full overflow-hidden border-r border-white/10">
+            <img src="IMG_4990.JPG" class="w-full h-full object-cover film-tint">
         </div>
-
-        <!-- 右 -->
-        <div class="w-1/3 h-full overflow-hidden">
-            <img src="IMG_4179.JPG"
-                 class="w-full h-full object-cover film-tint opacity-70 scale-110">
+        <div class="relative w-1/3 h-full overflow-hidden">
+            <img src="IMG_4179.JPG" class="w-full h-full object-cover film-tint">
         </div>
-
     </div>
 
-    <!-- 融合层（关键） -->
-    <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-black/30"></div>
+    <div class="gradient-overlay"></div>
 
-    <!-- 内容 -->
-    <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-6 slide-content">
-
-        <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tight">
+    <div class="relative z-20 h-full w-full flex flex-col justify-start items-start pt-32 px-12 slide-content">
+        <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tighter leading-tight" data-i18n="s3-h1">
             跨界内容创作者
         </h1>
-
-        <p class="text-white/70 mb-8 text-lg md:text-xl">
-            聚焦职场 · AI · 个人成长
-        </p>
-
-        <div class="flex gap-3 flex-wrap justify-center mb-10">
-            <span class="ins-tag">职场内容</span>
-            <span class="ins-tag">AI 内容</span>
-            <span class="ins-tag">Vlogger</span>
+        
+        <div class="flex flex-wrap gap-3 mb-4">
+            <span class="ins-tag" data-i18n="s3-t1" style="background: rgba(255,255,255,0.1);">总播放量超 67 万</span>
+            <span class="ins-tag" data-i18n="s3-t2" style="background: rgba(255,255,255,0.1);">聚焦职场 · AI · 个人成长</span>
         </div>
 
-        <a href="#" class="text-sm font-semibold border-b border-white pb-1 hover:opacity-70">
+        <div class="flex flex-wrap gap-3 mb-10">
+            <span class="ins-tag opacity-70" data-i18n="s3-t3" style="font-size: 11px; padding: 4px 12px;">职场内容</span>
+            <span class="ins-tag opacity-70" data-i18n="s3-t4" style="font-size: 11px; padding: 4px 12px;">AI 内容</span>
+            <span class="ins-tag opacity-70" data-i18n="s3-t5" style="font-size: 11px; padding: 4px 12px;">Vlogger</span>
+        </div>
+
+        <a href="#" class="text-sm font-bold border-b border-white pb-1 hover:opacity-70 transition" data-i18n="s3-btn">
             访问我的主页 →
         </a>
-
     </div>
-
 </section>
         </div>
         <button class="absolute left-6 top-1/2 -translate-y-1/2 z-50 text-white/30 hover:text-white" onclick="moveHeroSlide(-1)">
@@ -408,9 +389,7 @@
        const i18n = {
             zh: {
                 "nav-logo": "李清扬", "nav-exp": "职业经历", "nav-proj": "项目实战", "nav-contact": "联系",
-                "s1-h1-line1": "伦敦国王学院",
-                "s1-h1-line2": "工程管理硕士",
-                "s1-t1": "伦敦国王学院", "s1-t2": "南京师范大学", "s1-t3": "全局项目管理",
+                "s1-h1": "伦敦国王学院 工程管理硕士", "s1-t1": "伦敦国王学院", "s1-t2": "南京师范大学", "s1-t3": "全局项目管理",
                 "s2-h1": "企业履历", "s2-t1": "中国能建 (CEEC)", "s2-t2": "绿米联创 (Aqara)",
                 "s3-h1": "跨界内容创作者", 
                 "s3-t1": "总播放量超 67 万", "s3-t2": "聚焦职场 · AI · 个人成长",
